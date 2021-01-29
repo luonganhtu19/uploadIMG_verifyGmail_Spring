@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="layout::menu"></div>
+<h1>Tao moi HV</h1>
+<th:block th:if="${mess}">
+    <span th:text="${mess}"></span>
+</th:block>
+<form method="post" th:object="${s}" enctype="multipart/form-data">
+    <input type="hidden" id="id" name="id" th:value="${s.id}">
+    <input type="text" id="name" name="name">
+    <input type="text" id="address" name="address">
+    <input type="file" name="avatar">
+    <input type="submit" value="tao moi">
+</form>
+</body>
+</html>
